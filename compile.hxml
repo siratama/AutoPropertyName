@@ -1,21 +1,20 @@
--cp src/common
 -lib haxe-jsfl
 --each
 
 -js download/AutoPropertyName.jsfl
 -main AutoPropertyName
--cp src/jsx/AutoPropertyName
+-cp src
 
 --next
 
--js deploy/js/AutoPropertyName.jsfl
+-js deploy/jsfl/AutoPropertyName.jsfl
 -main AutoPropertyName
--cp src/extension
+-cp src
 
 --next
 
 -js deploy/js/index.js
 -main Panel
--cp src/extension/
+-cp src
 -cp C:\googledrive\workspace\MyHaxelib\haxelib\src\adobe_extension
 -lib jQueryExtern
