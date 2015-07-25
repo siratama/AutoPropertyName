@@ -1,7 +1,7 @@
 (function () { "use strict";
 var AutoPropertyName = function() {
 	if(jsfl.Lib.fl.getDocumentDOM() == null) return;
-	jsfl.Lib.fl.trace("--- start AutoPropertyName");
+	jsfl.Lib.fl.trace("--- start AutoPropertyName ---");
 	this.nameMap = new haxe.ds.StringMap();
 	this.duplicatedNameSet = [];
 	this.execute();
@@ -30,12 +30,13 @@ AutoPropertyName.prototype = {
 				if(element.elementType != jsfl.ElementType.INSTANCE) continue;
 				var symbolType = (js.Boot.__cast(element , SymbolInstance)).symbolType;
 				if(symbolType != jsfl.SymbolType.MOVIE_CLIP && symbolType != jsfl.SymbolType.BUTTON) continue;
-				element.name = (js.Boot.__cast(element , Instance)).libraryItem.name;
-				jsfl.Lib.fl.trace(element.name);
-				if(this.nameMap.get(element.name)) this.duplicatedNameSet.push(element.name); else {
-					this.nameMap.set(element.name,true);
+				var name = (js.Boot.__cast(element , Instance)).libraryItem.name.split("/").pop();
+				element.name = name;
+				if(this.nameMap.get(name)) this.duplicatedNameSet.push(name); else {
+					this.nameMap.set(name,true);
 					true;
 				}
+				jsfl.Lib.fl.trace(name);
 			}
 		}
 	}

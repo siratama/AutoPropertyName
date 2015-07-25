@@ -45,13 +45,15 @@ class AutoPropertyName
 				var symbolType = cast(element, SymbolInstance).symbolType;
 				if(symbolType != SymbolType.MOVIE_CLIP && symbolType != SymbolType.BUTTON) continue;
 
-				element.name = cast(element, Instance).libraryItem.name;
-				fl.trace(element.name);
+				var name = cast(element, Instance).libraryItem.name.split("/").pop();
+				element.name = name;
 
-				if(nameMap[element.name])
-					duplicatedNameSet.push(element.name);
+				if(nameMap[name])
+					duplicatedNameSet.push(name);
 				else
-					nameMap[element.name] = true;
+					nameMap[name] = true;
+
+				fl.trace(name);
 			}
 		}
 	}
