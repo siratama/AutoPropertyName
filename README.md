@@ -16,9 +16,9 @@ Nondisplay or a rock layer is ignored.
 
 非表示・ロックレイヤーは無視されます。
 
-When more than one same symbol is arranged, the same property name is set as all symbols.
+When more than one same name symbol is arranged, the same property name is set as all symbols.
 
-同じシンボルをステージ上に複数配置した場合、すべてのシンボルに対し同名のプロパティ名が設定されるためご注意ください。
+同じ名称のシンボルをステージ上に複数配置した場合、すべてのシンボルに対し同名のプロパティ名が設定されるためご注意ください。
 
 ---
 ## Download zxp (Flash Pro CC)
